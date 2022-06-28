@@ -4,6 +4,9 @@
   "newProjectRoot": "projects",
   "projects": {
     "chat-app": {
+      "cli": {
+        "packageManager": "yarn"
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -110,9 +113,22 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "chat-app"
+  "cli": {
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
+  }
 }

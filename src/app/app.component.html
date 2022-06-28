@@ -1,3 +1,63 @@
-<h1 class="tui-text_h1">My chat app</h1>
+<tui-theme-night *ngIf="mode === 'onDark'"></tui-theme-night>
+<tui-root [tuiMode]="mode">
+  <app-layout></app-layout>
 
-<h2 class="tui-text_h2">Content goes here</h2>
+  <button
+    class="settings-toggle"
+    tuiIconButton
+    type="button"
+    appearance="flat"
+    icon="tuiIconSettings"
+    (click)="open = true"
+    (tuiActiveZoneChange)="toggle($event)"
+  >
+    <div *tuiSidebar="open; direction: 'left'">
+      <tui-accordion [rounded]="false">
+        <tui-accordion-item borders="top-bottom">
+          Accordion Demo
+          <ng-template tuiAccordionItemContent>
+           <p>No idea what to put here</p>
+          </ng-template>
+        </tui-accordion-item>
+        <tui-accordion-item borders="top-bottom">
+          Accordion Demo 2
+          <ng-template tuiAccordionItemContent>
+            <p>More content</p>
+          </ng-template>
+        </tui-accordion-item>
+      </tui-accordion>
+
+      <div class="night-mode">
+        <button
+          *ngIf="mode === 'onLight'"
+          tuiIconButton
+          type="button"
+          appearance="flat"
+          icon="assets/icons/dark_mode.svg"
+          (click)="onMode(true)"
+        >
+        </button>
+
+        <button
+          *ngIf="mode === 'onDark'"
+          tuiIconButton
+          type="button"
+          appearance="flat"
+          icon="assets/icons/light_mode.svg"
+          (click)="onMode(false)"
+        >
+        </button>
+      </div>
+
+<!--      <label class="night-mode">-->
+<!--        Night mode-->
+<!--        <tui-toggle-->
+<!--          class="tui-toggle"-->
+<!--          [ngModel]="night"-->
+<!--          (ngModelChange)="onMode($event)"-->
+<!--        ></tui-toggle>-->
+<!--      </label>-->
+    </div>
+  </button>
+</tui-root>
+

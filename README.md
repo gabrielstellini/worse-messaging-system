@@ -1,6 +1,8 @@
 # ChatApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+This app is a exploratory project for Taiga UI and Golang. It's still a WIP - so the app structure is not optimal!
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.
 
 ## Development server
 
