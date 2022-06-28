@@ -9,14 +9,13 @@
     appearance="flat"
     icon="tuiIconSettings"
     (click)="open = true"
-    (tuiActiveZoneChange)="toggle($event)"
-  >
+    (tuiActiveZoneChange)="toggle($event)">
     <div *tuiSidebar="open; direction: 'left'">
       <tui-accordion [rounded]="false">
         <tui-accordion-item borders="top-bottom">
           Accordion Demo
           <ng-template tuiAccordionItemContent>
-           <p>No idea what to put here</p>
+            <p>No idea what to put here</p>
           </ng-template>
         </tui-accordion-item>
         <tui-accordion-item borders="top-bottom">
@@ -34,9 +33,7 @@
           type="button"
           appearance="flat"
           icon="assets/icons/dark_mode.svg"
-          (click)="onMode(true)"
-        >
-        </button>
+          (click)="onMode(true)"></button>
 
         <button
           *ngIf="mode === 'onDark'"
@@ -44,20 +41,17 @@
           type="button"
           appearance="flat"
           icon="assets/icons/light_mode.svg"
-          (click)="onMode(false)"
-        >
-        </button>
+          (click)="onMode(false)"></button>
       </div>
 
-<!--      <label class="night-mode">-->
-<!--        Night mode-->
-<!--        <tui-toggle-->
-<!--          class="tui-toggle"-->
-<!--          [ngModel]="night"-->
-<!--          (ngModelChange)="onMode($event)"-->
-<!--        ></tui-toggle>-->
-<!--      </label>-->
+      <!--      <label class="night-mode">-->
+      <!--        Night mode-->
+      <!--        <tui-toggle-->
+      <!--          class="tui-toggle"-->
+      <!--          [ngModel]="night"-->
+      <!--          (ngModelChange)="onMode($event)"-->
+      <!--        ></tui-toggle>-->
+      <!--      </label>-->
     </div>
   </button>
 </tui-root>
-
